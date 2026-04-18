@@ -266,11 +266,11 @@ class [[nodiscard]] cstring {
 
   [[nodiscard]] string str() const { return {begin(), end()}; }
 
-  [[nodiscard]] constexpr operator string_view() const noexcept { return {data(), size()}; }
+  [[nodiscard]] constexpr operator std::string_view() const noexcept { return {data(), size()}; }
 
   [[nodiscard]] constexpr explicit operator const_pointer() const noexcept { return data(); }
 
-  [[nodiscard]] explicit operator string() const { return {begin(), end()}; }
+  [[nodiscard]] explicit operator std::string() const { return {begin(), end()}; }
 
  private:
   template <std::uint16_t... I>
